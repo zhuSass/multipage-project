@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <title></title>
+    <script>
+        (function (win) {
+            // 不能用ES6
+            var docEl = win.document.documentElement
+            var tid
+
+            function refreshRem() {
+                var width = docEl.getBoundingClientRect().width
+                if (width > 468) {
+                    width = 468
+                }
+                var rem = width / 3.75
+                docEl.style.fontSize = rem + 'px'
+            }
+
+            function dbcRefresh() {
+                clearTimeout(tid)
+                tid = setTimeout(refreshRem, 100)
+            }
+
+            win.addEventListener('resize', function () {
+                dbcRefresh()
+            }, false)
+            win.addEventListener('pageshow', function (e) {
+                dbcRefresh()
+            }, false)
+            refreshRem()
+        })(window)
+    </script>
+
+</head>
+<body>
+    <div id="app"></div>
+<script type="text/javascript" src="../js/common.1367e69d483685800e1c.js?"></script><script type="text/javascript" src="../js/spa.6b28b359ea8fd536d4f0.js?"></script></body>
+<script>
+    (function (win) {
+        if ('addEventListener' in document) {
+            document.addEventListener('DOMContentLoaded', function () {
+                // win.FastClick.attach(document.body)
+            }, false)
+        }
+    })(window)
+</script>
+</html>
